@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Steerpath Smart Map SDK Capacitor Test</string>
+    <string name="title_activity_main">Steerpath Smart Map SDK Capacitor Test</string>
+    <string name="package_name">com.wunderdog.smartmapcapacitortest</string>
+    <string name="custom_url_scheme">com.wunderdog.smartmapcapacitortest</string>
+</resources>

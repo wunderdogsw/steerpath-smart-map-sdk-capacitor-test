@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GrZ-DS-erc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="DrL-JA-Dmv">
+            <objects>
+                <navigationController id="GrZ-DS-erc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ac5-us-QIC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qpo-qi-y1b" kind="relationship" relationship="rootViewController" id="Rte-8x-SBd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CtO-xd-Se7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1644" y="108"/>
+        </scene>
+        <!--Examples List View Controller-->
+        <scene sceneID="pFp-Ak-0mR">
+            <objects>
+                <viewController id="Qpo-qi-y1b" customClass="ExamplesListViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Aci-aM-DVR"/>
+                        <viewControllerLayoutGuide type="bottom" id="VjY-t0-zep"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GVO-6w-UDc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9xk-ZI-mQf">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="UA3-u6-s1T">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UA3-u6-s1T" id="3Yc-Jw-1MJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="WqG-0R-bTx" kind="show" identifier="ShowBasicMap" id="D75-Sq-stM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oEU-PB-8Mk">
+                                        <rect key="frame" x="0.0" y="93.5" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oEU-PB-8Mk" id="mFs-ut-JaX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Hll-XY-8wB" kind="show" identifier="ShowSearchMap" id="WRR-M8-Jkj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qpo-qi-y1b" id="3Y0-GL-BqL"/>
+                                    <outlet property="delegate" destination="Qpo-qi-y1b" id="bzE-90-0lp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9xk-ZI-mQf" firstAttribute="leading" secondItem="GVO-6w-UDc" secondAttribute="leading" id="Ndj-fl-Gfe"/>
+                            <constraint firstItem="9xk-ZI-mQf" firstAttribute="top" secondItem="Aci-aM-DVR" secondAttribute="bottom" id="Tym-5G-miY"/>
+                            <constraint firstAttribute="bottom" secondItem="9xk-ZI-mQf" secondAttribute="bottom" id="Zwb-53-qjO"/>
+                            <constraint firstAttribute="trailing" secondItem="9xk-ZI-mQf" secondAttribute="trailing" id="oUz-uZ-MSW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rRl-gf-T7Z"/>
+                    <connections>
+                        <outlet property="examplesTableView" destination="9xk-ZI-mQf" id="DHS-d9-c9p"/>
+                        <segue destination="l1u-DU-Qyx" kind="show" identifier="ShowCamera" id="Dsm-fq-eTX"/>
+                        <segue destination="6sR-rR-hpY" kind="show" identifier="ShowMarkers" id="kBB-7D-zIH"/>
+                        <segue destination="s0E-dU-vaT" kind="show" identifier="ShowNavigation" id="pSO-AS-F0L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="428-4v-qKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-847.20000000000005" y="106.59670164917542"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="9WZ-02-DRc">
+            <objects>
+                <viewController title="Camera" id="l1u-DU-Qyx" userLabel="Camera View Controller" customClass="CameraViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tGJ-ec-EKh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yns-Um-cky"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rXl-eg-yD4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G79-FD-vaR" customClass="SPSmartMapView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="l1u-DU-Qyx" id="Htp-kw-a7v"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="G79-FD-vaR" secondAttribute="bottom" id="2Uq-Td-U5A"/>
+                            <constraint firstItem="G79-FD-vaR" firstAttribute="top" secondItem="tGJ-ec-EKh" secondAttribute="bottom" id="RQD-jD-sAH"/>
+                            <constraint firstItem="G79-FD-vaR" firstAttribute="leading" secondItem="rXl-eg-yD4" secondAttribute="leading" id="VCl-nx-Vhx"/>
+                            <constraint firstAttribute="trailing" secondItem="G79-FD-vaR" secondAttribute="trailing" id="xfp-es-dlO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="G79-FD-vaR" id="uWS-bv-H7I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T40-V8-8S0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-847" y="835"/>
+        </scene>
+        <!--Markers View Controller-->
+        <scene sceneID="9gR-4S-lF0">
+            <objects>
+                <viewController title="Adding Markers" id="6sR-rR-hpY" userLabel="Markers View Controller" customClass="MarkersViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O7E-Gl-gIb"/>
+                        <viewControllerLayoutGuide type="bottom" id="sti-9y-ZLE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ikv-nx-UYw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9b9-tS-MDE" customClass="SPSmartMapView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6sR-rR-hpY" id="fxi-j7-NZ5"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9b9-tS-MDE" secondAttribute="trailing" id="AS7-j6-oy7"/>
+                            <constraint firstItem="9b9-tS-MDE" firstAttribute="top" secondItem="O7E-Gl-gIb" secondAttribute="bottom" id="JP7-gp-uJ2"/>
+                            <constraint firstAttribute="bottom" secondItem="9b9-tS-MDE" secondAttribute="bottom" id="Mh0-i1-sc6"/>
+                            <constraint firstItem="9b9-tS-MDE" firstAttribute="leading" secondItem="ikv-nx-UYw" secondAttribute="leading" id="ec3-n5-Nks"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="9b9-tS-MDE" id="htO-Hh-BRk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHs-Q5-4S0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-142" y="834"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="4Su-2K-rLN">
+            <objects>
+                <viewController title="Navigation" id="s0E-dU-vaT" userLabel="Navigation View Controller" customClass="NavigationViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ecv-GW-Q2f"/>
+                        <viewControllerLayoutGuide type="bottom" id="hiz-Pk-JBv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MTW-tU-922">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Llg-eC-52e" customClass="SPSmartMapView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="s0E-dU-vaT" id="yZb-qn-N7E"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Llg-eC-52e" firstAttribute="leading" secondItem="MTW-tU-922" secondAttribute="leading" id="1nb-Mo-fFY"/>
+                            <constraint firstAttribute="bottom" secondItem="Llg-eC-52e" secondAttribute="bottom" id="GF6-bG-ITM"/>
+                            <constraint firstAttribute="trailing" secondItem="Llg-eC-52e" secondAttribute="trailing" id="JRI-ZO-dMy"/>
+                            <constraint firstItem="Llg-eC-52e" firstAttribute="top" secondItem="Ecv-GW-Q2f" secondAttribute="bottom" id="g5g-RG-nI2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Llg-eC-52e" id="6gw-cq-eRY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zMa-VJ-Qfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="530" y="833"/>
+        </scene>
+        <!--Basic Map-->
+        <scene sceneID="E8V-R9-ene">
+            <objects>
+                <viewController storyboardIdentifier="BasicMap" id="WqG-0R-bTx" customClass="BasicMapViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y14-pJ-THF"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y5N-tf-G7A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QyD-Ne-al4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSP-DX-az6" userLabel="MapView" customClass="SPSmartMapView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JSP-DX-az6" firstAttribute="leading" secondItem="QyD-Ne-al4" secondAttribute="leading" id="E0c-7S-isC"/>
+                            <constraint firstAttribute="bottom" secondItem="JSP-DX-az6" secondAttribute="bottom" id="K9N-ny-eH1"/>
+                            <constraint firstAttribute="trailing" secondItem="JSP-DX-az6" secondAttribute="trailing" id="RsY-LZ-XsS"/>
+                            <constraint firstItem="JSP-DX-az6" firstAttribute="top" secondItem="y14-pJ-THF" secondAttribute="bottom" id="xw4-nk-fxi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Basic Map" id="Dng-EP-BtK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cg7-o6-pck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1644" y="834"/>
+        </scene>
+        <!--Search Map-->
+        <scene sceneID="qaU-M7-ODz">
+            <objects>
+                <viewController id="Hll-XY-8wB" customClass="SearchMapViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0RS-K4-w1f"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vf7-Zc-oQ5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kDq-U7-gDm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLS-6p-X0B" userLabel="MapView" customClass="SPSmartMapView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aLS-6p-X0B" secondAttribute="trailing" id="G8T-E5-iMB"/>
+                            <constraint firstItem="aLS-6p-X0B" firstAttribute="leading" secondItem="kDq-U7-gDm" secondAttribute="leading" id="Ilq-LU-LTl"/>
+                            <constraint firstItem="aLS-6p-X0B" firstAttribute="top" secondItem="0RS-K4-w1f" secondAttribute="bottom" id="WGd-oD-BSM"/>
+                            <constraint firstAttribute="bottom" secondItem="aLS-6p-X0B" secondAttribute="bottom" id="y6J-Nw-YRH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search Map" id="3Qw-6J-ujB"/>
+                    <connections>
+                        <outlet property="mapView" destination="aLS-6p-X0B" id="iOr-2t-gin"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hR5-3q-us8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="825"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
