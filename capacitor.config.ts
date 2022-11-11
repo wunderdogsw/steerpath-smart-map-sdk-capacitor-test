@@ -7,7 +7,9 @@ const config: CapacitorConfig = {
   webDir: "dist",
   bundledWebRuntime: false,
   server: {
-    url: "http://127.0.0.1:5173/"
+    url: "http://localhost:5173/", // iOS
+    // url: "http://192.168.0.228:5173/", // Android
+    cleartext: true
   }
 };
 

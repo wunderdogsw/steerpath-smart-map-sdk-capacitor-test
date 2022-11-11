@@ -6,7 +6,7 @@
     "node": "16.x"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "dev:android": "cap open android",
     "dev:ios": "cap open ios",
     "clean": "rimraf ./dist",

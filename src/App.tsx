@@ -1,4 +1,5 @@
 import React, { FC, useCallback, useEffect, useState } from "react";
+import { Capacitor } from "@capacitor/core";
 import { Filesystem, Directory, Encoding } from "@capacitor/filesystem";
 
 import steerpathConfig from "../steerpath_config.json";
@@ -34,12 +35,23 @@ const App: FC = () => {
       setSDKReady(true);
     };
 
-    writeConfigFileAndSetupSdkAsync();
+    if (Capacitor.getPlatform() === "ios") {
+      writeConfigFileAndSetupSdkAsync();
+    }
   }, []);
 
   const handleClick = useCallback(() => {
     SmartMap.show();
   }, []);
+
+  if (Capacitor.getPlatform() !== "ios") {
+    return (
+      <div className="App">
+        <h1>Test</h1>
+        <p>Platform <b>{Capacitor.getPlatform()}</b> is not supported.</p>
+      </div>
+    );
+  }
 
   if (!sdkReady) {
     return null;
